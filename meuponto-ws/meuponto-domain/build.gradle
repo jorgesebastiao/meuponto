@@ -1,0 +1,8 @@
+jar {
+    archiveBaseName = 'meuponto-domain'
+    archiveVersion = '1.0.0-SNAPSHOT'
+}
+
+dependencies{
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+}

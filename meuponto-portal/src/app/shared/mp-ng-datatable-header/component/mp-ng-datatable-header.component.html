@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWarp fxLayoutGap="0.5%" fxLayoutAlign="center">
+
+  <div style="padding-right: 10px" >
+    <button
+      (click)="newRegisterChanged()"
+      mat-raised-button
+      color="primary">{{buttonTitle}} <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <div fxFlex>
+    <mat-form-field [formGroup]="searchForm" novalidate>
+      <input matInput formControlName="search" placeholder="{{placeholder}}">
+    </mat-form-field>
+  </div>
+
+</div>

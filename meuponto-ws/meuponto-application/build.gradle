@@ -1,0 +1,14 @@
+jar {
+    archiveBaseName = 'meuponto-application'
+    archiveVersion = '1.0.0-SNAPSHOT'
+}
+
+dependencies {
+    compile project(':meuponto-domain')
+    compile project(':meuponto-infrastructure')
+    compile group: 'org.springframework.security', name: 'spring-security-crypto', version: '3.1.0.RELEASE'
+    compile group: 'org.modelmapper.extensions', name: 'modelmapper-spring', version: '2.3.2'
+    implementation 'io.jkratz.springmediatr:spring-mediatr:1.1-RC'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+}

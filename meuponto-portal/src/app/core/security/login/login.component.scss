@@ -1,0 +1,26 @@
+#login {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url('../../../../assets/login-background.jpg') no-repeat;
+  background-size: cover;
+}
+
+.m-15 {
+  margin-top: 15px
+}
+
+.p-15 {
+  background: #f7f7f7;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  -webkit-box-shadow: -4px 0px 16px -9px rgba(0,0,0,0.68);
+  -moz-box-shadow: -4px 0px 16px -9px rgba(0,0,0,0.68);
+  box-shadow: -4px 0px 16px -9px rgba(0,0,0,0.68);
+}
+
+.title {
+  padding-bottom: 50px;
+  padding-top: 50px;
+}

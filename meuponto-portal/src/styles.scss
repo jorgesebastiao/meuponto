@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "theme";
+@import "~ngx-toastr/toastr.css";
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.css';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+@import '~@swimlane/ngx-datatable/themes/bootstrap.css';
+
+$material-icons-font-path: '~material-icons/iconfont/';
+
+@import '~material-icons/iconfont/material-icons.scss';
+
+@import './app/shared/styles/variables';
+@import './app/shared/styles/components/ngx-loading-bar.scss';
+@import './app/shared/styles/components/ngx-datatable';
+
+body {
+  margin: 0;
+  background: #f7f7f7;
+  font-family: arial;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}

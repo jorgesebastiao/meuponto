@@ -1,0 +1,8 @@
+rootProject.name = 'meuponto-ws'
+include 'meuponto-distribution'
+include 'meuponto-application'
+include 'meuponto-domain'
+include 'meuponto-infrastructure'
+include 'meuponto-security'
+include 'meuponto-client'
+
