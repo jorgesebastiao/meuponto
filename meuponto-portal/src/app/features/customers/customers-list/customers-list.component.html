@@ -50,8 +50,9 @@ placeholder="Pesquisar clientes"
   </ngx-datatable-column>
   <ngx-datatable-column name="Ações" prop="id" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false" >
     <ng-template let-rowIndex="rowIndex" let-id="value" ngx-datatable-cell-template>
-     <!-- <button mat-button matTooltip="Editar"
-              matTooltipPosition="below" [routerLink]="[id]" > <mat-icon>create</mat-icon></button>-->
+      <button mat-button matTooltip="Editar"
+              matTooltipPosition="below" (click)="editCustomer(id)"> <mat-icon>edit</mat-icon>
+      </button>
     </ng-template>
   </ngx-datatable-column>
 </ngx-datatable>

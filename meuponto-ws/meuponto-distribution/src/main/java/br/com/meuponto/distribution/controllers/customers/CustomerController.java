@@ -3,9 +3,11 @@ package br.com.meuponto.distribution.controllers.customers;
 import br.com.meuponto.application.customers.commands.CustomerCreateCommand;
 import br.com.meuponto.application.customers.commands.CustomerDeleteCommand;
 import br.com.meuponto.application.customers.commands.CustomerUpdateCommand;
+import br.com.meuponto.application.customers.queries.CustomerGetQuery;
 import br.com.meuponto.application.customers.queries.CustomerLoadAllQuery;
 import br.com.meuponto.distribution.controllers.base.ApiBaseController;
 import br.com.meuponto.distribution.controllers.customers.viewmodels.CustomerResumeViewModel;
+import br.com.meuponto.distribution.controllers.customers.viewmodels.CustomerViewModel;
 import io.jkratz.mediator.core.Mediator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -42,6 +44,16 @@ public class CustomerController extends ApiBaseController {
         return HandlePageResult(pageable, mediator.dispatch(query), CustomerResumeViewModel.class);
     }
 
+    @ApiOperation(value = "View a customer by id", response = CustomerViewModel.class)
+    @GetMapping("{id}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN') and #oauth2.hasScope('read')")
+    public ResponseEntity<CustomerViewModel> getById(@PathVariable Integer id) {
+        var query = CustomerGetQuery.builder()
+                .customerId(id)
+                .build();
+        return   ok(sourceToDestination(mediator.dispatch(query), CustomerViewModel.class));
+    }
+
     @ApiOperation(value = "Register a customer")
     @PostMapping
     @PreAuthorize("hasAuthority('ROLE_ADMIN') and #oauth2.hasScope('write')")
@@ -61,7 +73,7 @@ public class CustomerController extends ApiBaseController {
     @ApiOperation(value = "Delete a customer")
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('ROLE_ADMIN') and #oauth2.hasScope('write')")
-    public ResponseEntity delete(@PathVariable int id) {
+    public ResponseEntity delete(@PathVariable Integer id) {
         var command = CustomerDeleteCommand.builder()
                 .customerId(id)
                 .build();

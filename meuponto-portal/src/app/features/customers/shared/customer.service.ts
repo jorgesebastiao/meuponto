@@ -4,6 +4,7 @@ import {environment} from '../../../../environments/environment';
 import {Page} from '../../../shared/models/page/page.model';
 import {Observable} from 'rxjs';
 import {HttpParams} from '@angular/common/http';
+import { CustomerCreateCommand, CustomerUpdateComand, CustomerViewModel } from './customer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,17 @@ export class CustomerService {
       params: httpParans,
       responseType: 'json'
     });
+  }
+  
+  getById(customerId: number): Observable<CustomerViewModel> {
+    return this.http.get(`${this.apiUrl}/${customerId}`);
+  }
+
+  post(customer: CustomerCreateCommand): Observable<any> {
+    return this.http.post(this.apiUrl, JSON.stringify(customer));
+  }
+
+  put(customer: CustomerUpdateComand): Observable<any> {
+    return this.http.put(this.apiUrl, JSON.stringify(customer));
   }
 }

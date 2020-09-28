@@ -4,6 +4,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import {FlexModule} from '@angular/flex-layout';
 import { CpfPipe, CnpjPipe, CellPhone } from './pipes';
+import { FormService } from './services/form.service';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { CpfPipe, CnpjPipe, CellPhone } from './pipes';
     FormsModule,
     ReactiveFormsModule,
     LayoutModule,
-    FlexModule
+    FlexModule,
+    NgxLoadingModule
   ],
   exports: [
     CommonModule,
@@ -26,6 +29,10 @@ import { CpfPipe, CnpjPipe, CellPhone } from './pipes';
     CpfPipe,
     CnpjPipe,
     CellPhone,
+    NgxLoadingModule
+  ],
+  providers: [
+    FormService
   ]
 })
 export class SharedModule {
