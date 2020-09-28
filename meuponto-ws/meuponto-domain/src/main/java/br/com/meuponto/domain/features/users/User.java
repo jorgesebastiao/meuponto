@@ -13,7 +13,7 @@ import java.util.Set;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity(name = "users")
-public class User extends EntityBase<Long> {
+public class User extends EntityBase<Integer> {
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
@@ -32,7 +32,4 @@ public class User extends EntityBase<Long> {
         this.email = email.toLowerCase().trim();
     }
 
-    public PermissionType getPermissionType(){
-        return  permissions.stream().findFirst().get().getPermission();
-    }
 }

@@ -1,0 +1,57 @@
+<mp-ng-datatable-header
+buttonTitle="Cadastrar"
+brand="Colaboradores"
+placeholder="Pesquisar colaborador "
+(newRegisterChange)="registerCollaborator($event)"
+(searchChange)="searchCollaborator($event)">
+>
+</mp-ng-datatable-header>
+
+<ngx-datatable
+  class="material fullscreen"
+  [columnMode]="'force'"
+  [rowHeight]="'auto'"
+  [headerHeight]="40"
+  [footerHeight]="30"
+  [scrollbarV]="false"
+  [scrollbarH]="true"
+  [rows]="rows"
+  [messages]="messages"
+  [columns]="columns"
+  [externalPaging]="true"
+  [loadingIndicator]="isLoading"
+  [count]="page.totalElements"
+  [offset]="page.pageNumber"
+  [limit]="page.size"
+  (page)='setPage($event)'>
+  <ngx-datatable-column name="cnpj">
+    <ng-template let-column="column" ngx-datatable-header-template>
+      CPF
+    </ng-template>
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.cpf | cpf}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="name">
+    <ng-template let-column="column" ngx-datatable-header-template>
+      Nome
+    </ng-template>
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.name}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="tradeName">
+    <ng-template let-column="column" ngx-datatable-header-template>
+      Matricula
+    </ng-template>
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{row.tradeName}}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Ações" prop="id" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false" >
+    <ng-template let-rowIndex="rowIndex" let-id="value" ngx-datatable-cell-template>
+     <!-- <button mat-button matTooltip="Editar"
+              matTooltipPosition="below" [routerLink]="[id]" > <mat-icon>create</mat-icon></button>-->
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>

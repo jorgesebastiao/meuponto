@@ -3,9 +3,14 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import {FlexModule} from '@angular/flex-layout';
+import { CpfPipe, CnpjPipe, CellPhone } from './pipes';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CpfPipe,
+    CnpjPipe,
+    CellPhone
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -17,7 +22,10 @@ import {FlexModule} from '@angular/flex-layout';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexModule
+    FlexModule,
+    CpfPipe,
+    CnpjPipe,
+    CellPhone,
   ]
 })
 export class SharedModule {

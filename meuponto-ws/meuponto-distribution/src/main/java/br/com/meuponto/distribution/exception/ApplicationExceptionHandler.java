@@ -2,6 +2,7 @@ package br.com.meuponto.distribution.exception;
 
 import br.com.meuponto.domain.features.exceptions.ExceptionCnpjInUse;
 import br.com.meuponto.domain.features.exceptions.ExceptionCpfInUse;
+import br.com.meuponto.domain.features.exceptions.ExceptionEmailInUse;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,7 +31,7 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
     @Override
     protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex,
                                                                   HttpHeaders headers, HttpStatus status, WebRequest request) {
-        var errorMessage = messageSource.getMessage("mensagem.invalida", null, LocaleContextHolder.getLocale());
+        var errorMessage = messageSource.getMessage("message.invalid", null, LocaleContextHolder.getLocale());
         return handleExceptionInternal(ex, new ErrorResponse(HttpStatus.BAD_REQUEST, errorMessage), request);
     }
 
@@ -55,9 +56,15 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
         return handleExceptionInternal(ex, new ErrorResponse(HttpStatus.BAD_REQUEST, errorMessage), request);
     }
 
+    @ExceptionHandler({ExceptionEmailInUse.class })
+    public ResponseEntity<Object> handleEmptyResultDataAccessException(ExceptionEmailInUse ex, WebRequest request) {
+        var errorMessage = messageSource.getMessage("email.in-use", null, LocaleContextHolder.getLocale());
+        return handleExceptionInternal(ex, new ErrorResponse(HttpStatus.BAD_REQUEST, errorMessage), request);
+    }
+
     @ExceptionHandler({ EmptyResultDataAccessException.class })
     public ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex, WebRequest request) {
-        var errorMessage = messageSource.getMessage("recurso.nao-encontrado", null, LocaleContextHolder.getLocale());
+        var errorMessage = messageSource.getMessage("resource.not-found", null, LocaleContextHolder.getLocale());
         return handleExceptionInternal(ex, new ErrorResponse(HttpStatus.NOT_FOUND, errorMessage), request);
     }
 

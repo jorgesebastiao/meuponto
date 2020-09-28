@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity(name = "permissions")
-public class Permission extends EntityBase<Long> {
+public class Permission extends EntityBase<Integer> {
     @Column(nullable = false, unique = true)
     private PermissionType permission;
 }

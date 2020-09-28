@@ -1,7 +1,11 @@
 insert into permissions(id,creationDate,lastModification,permission)
 values(1,NOW(),NOW(),0);
+
 insert into permissions(id,creationDate,lastModification,permission)
 values(2,NOW(),NOW(),1);
+
+insert into permissions(id,creationDate,lastModification,permission)
+values(3,NOW(),NOW(),2);
 
 insert into users(id,
 creationDate,
