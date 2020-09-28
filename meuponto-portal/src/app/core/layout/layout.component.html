@@ -2,22 +2,22 @@
 <mp-ng-navbar  (toggleSidenav)="navigationSidenav.toggle()"></mp-ng-navbar> 
 
 <mat-sidenav-container autosize >
-  <mat-sidenav  #navigationSidenav mode="over" role="navigation" fixedInViewport="true">
+  <mat-sidenav #sidenav #navigationSidenav mode="over" role="navigation" fixedInViewport="true">
     <mat-toolbar>
       <mat-toolbar-row>
         <h2 class="toolbar-title"> Meu Ponto </h2>
       </mat-toolbar-row>
     </mat-toolbar>
     <mat-nav-list>
-        <a routerLink="/dashboard" mat-list-item>
+        <a routerLink="/dashboard" mat-list-item (click)="sidenav.toggle()">
           <mat-icon matListIcon>dashboard</mat-icon>
           Dashboard 
         </a>
-        <a routerLink="/customers" mat-list-item>
+        <a routerLink="/customers"  mat-list-item (click)="sidenav.toggle()">
           <mat-icon matListIcon>business</mat-icon>
           Clientes 
         </a>
-        <a routerLink="/collaborators" mat-list-item>
+        <a routerLink="/collaborators" mat-list-item (click)="sidenav.toggle()">
           <mat-icon matListIcon>people</mat-icon>
           Colaboradores 
         </a>
