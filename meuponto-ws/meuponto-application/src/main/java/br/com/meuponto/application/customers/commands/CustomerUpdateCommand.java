@@ -7,5 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CustomerUpdateCommand implements Command {
-
+    private Integer id;
+    private String corporateName;
+    private String tradeName;
 }

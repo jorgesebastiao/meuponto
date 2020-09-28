@@ -1,5 +1,8 @@
 package br.com.meuponto.distribution.controllers.customers;
 
+import br.com.meuponto.application.customers.commands.CustomerCreateCommand;
+import br.com.meuponto.application.customers.commands.CustomerDeleteCommand;
+import br.com.meuponto.application.customers.commands.CustomerUpdateCommand;
 import br.com.meuponto.application.customers.queries.CustomerLoadAllQuery;
 import br.com.meuponto.distribution.controllers.base.ApiBaseController;
 import br.com.meuponto.distribution.controllers.customers.viewmodels.CustomerResumeViewModel;
@@ -9,11 +12,13 @@ import io.swagger.annotations.ApiOperation;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import static org.springframework.http.ResponseEntity.ok;
+import static org.springframework.http.ResponseEntity.status;
 
 @RestController
 @RequestMapping("/customers")
@@ -35,5 +40,32 @@ public class CustomerController extends ApiBaseController {
                 .pageable(pageable)
                 .build();
         return HandlePageResult(pageable, mediator.dispatch(query), CustomerResumeViewModel.class);
+    }
+
+    @ApiOperation(value = "Register a customer")
+    @PostMapping
+    @PreAuthorize("hasAuthority('ROLE_ADMIN') and #oauth2.hasScope('write')")
+    public ResponseEntity post(@RequestBody CustomerCreateCommand customerCreateCommand) {
+        this.mediator.dispatch(customerCreateCommand);
+        return status(HttpStatus.CREATED).build();
+    }
+
+    @ApiOperation(value = "Update a customer")
+    @PutMapping
+    @PreAuthorize("hasAuthority('ROLE_ADMIN') and #oauth2.hasScope('write')")
+    public ResponseEntity put(@RequestBody CustomerUpdateCommand customerUpdateCommand) {
+        this.mediator.dispatch(customerUpdateCommand);
+        return status(HttpStatus.CREATED).build();
+    }
+
+    @ApiOperation(value = "Delete a customer")
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN') and #oauth2.hasScope('write')")
+    public ResponseEntity delete(@PathVariable int id) {
+        var command = CustomerDeleteCommand.builder()
+                .customerId(id)
+                .build();
+        this.mediator.dispatch(command);
+        return ok().build();
     }
 }

@@ -7,5 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CustomerCreateCommand implements Command {
-
+    private String cnpj;
+    private String corporateName;
+    private String tradeName;
 }
