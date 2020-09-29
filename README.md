@@ -6,10 +6,9 @@
 **Front-end**
 - Frameworks
  
-  Angular V 8.0.0
-  
-  Angular Material(UI)
-
+  - Angular V 8.0.0
+  - Angular Material(UI)
+- Typescript 3.5.3
 **Back-end**
 - Java 11
 - Gradle 5.2.1
