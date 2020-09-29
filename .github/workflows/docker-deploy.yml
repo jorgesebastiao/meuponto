@@ -9,7 +9,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     env:
-      front-end: ./meuponto-client
+      front-end: ./meuponto-portal
       back-end: ./meuponto-ws
 
     steps:
