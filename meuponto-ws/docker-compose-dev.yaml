@@ -17,7 +17,7 @@ services:
   meuponto-dev:
     restart: always
     build: .
-    container_name: meuponto-ws
+    container_name: meuponto-dev
     environment:
       SPRING_PROFILES_ACTIVE: prod
     ports:
