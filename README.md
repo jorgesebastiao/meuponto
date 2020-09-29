@@ -52,6 +52,7 @@ executar o comando  C:\Projetos\meuponto\meuponto-ws>gradlew.bat build
 
 em seguida executar o comando  docker-compose -f docker-compose-prod.yaml up
  acessar através do link localhost:8080
+ 
 **Dados de acesso**
 
  - email: admin@meuponto.com.br
