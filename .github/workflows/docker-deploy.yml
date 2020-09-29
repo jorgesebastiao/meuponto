@@ -34,18 +34,15 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew bootJar
-      working-directory: ${{env.back-end}}
-      
+      working-directory: ${{env.back-end}}      
     - name: Docker login
       run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
-      
     - name: Build image docker
-      run: docker build -t meuponto-ws .
-      
+      run: docker build -t meuponto .
     - name: Tags image docker
       run: |
-        docker tag meuponto-ws ${{ secrets.DOCKER_USER }}/meuponto:${{ github.sha }}
-        docker tag meuponto-ws ${{ secrets.DOCKER_USER }}/meuponto:latest
+        docker tag meuponto ${{ secrets.DOCKER_USER }}/meuponto:${{ github.sha }}
+        docker tag meuponto ${{ secrets.DOCKER_USER }}/meuponto:latest
     - name: Push image docker
       run: |
         docker push ${{ secrets.DOCKER_USER }}/meuponto:${{ github.sha }}
