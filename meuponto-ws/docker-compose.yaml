@@ -15,6 +15,7 @@ services:
       - app-tier
 
   meuponto:
+    restart: always
     image: mehiell/meuponto:latest
     container_name: meuponto-ws
     environment:
@@ -23,7 +24,6 @@ services:
       JDBC_DATABASE_URL: meuponto-mysql
       JDBC_DATABASE_USERNAME: meuponto
       JDBC_DATABASE_PASSWORD: meuponto@jorgesebastiao
-      WAIT_HOSTS: mysql:3306
     ports:
       - 8080:8080
     depends_on:
