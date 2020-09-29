@@ -14,8 +14,10 @@ services:
     networks:
       - app-tier
 
-  meuponto-ws:
-    image: mehiell/meuponto:latest
+  meuponto-dev:
+    restart: always
+    build: .
+    container_name: meuponto-ws
     environment:
       SPRING_PROFILES_ACTIVE: prod
     ports:
