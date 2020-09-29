@@ -1,6 +1,6 @@
 version: '3'
 services:
-  cp-mongodb:
+  meuponto-mysql:
     container_name: meuponto-mysql
     image: mysql
     environment:
@@ -8,13 +8,11 @@ services:
       MYSQL_USER: 'meuponto'
       MYSQL_PASSWORD: 'meuponto@jorgesebastiao'
       MYSQL_ROOT_PASSWORD: 'meuponto@jorgesebastiao'
-      MYSQL_ROOT_HOST: %
+      MYSQL_ROOT_HOST: '%'
     ports:
       - 3306:3306
     expose:
       - '3306'
-      volumes:
-     - meuponto-db:/var/lib/mysql
     networks:
       - app-tier
 
