@@ -22,10 +22,12 @@ Angular, Angular Material(UI)
 **Banco de dados**
  - mysql
 
-Como executar:
-Utilizando imagen docker
+Como executar ambiente Windows:
+
+Utilizando imagen docker:
 necessario ter instalado Docker
- navegar ate /meuponto/meuponto-ws
+
+ navegar pelo termina(CMD) ate  C:\Projetos\meuponto\meuponto-ws
  
  executar comando 'docker-compose up' 
  
@@ -40,6 +42,16 @@ necessario ter instalado:
 - Docker
 - Gradle 5.2.1
 
+navegar pelo termina(CMD) ate  C:\Projetos\meuponto\meuponto-portal
+
+executar o comando npm i e npm run build:prod
+
+navegar pelo terminal ate  C:\Projetos\meuponto\meuponto\meuponto-portal
+
+executar o comando  C:\Projetos\meuponto\meuponto-ws>gradlew.bat build
+
+em seguida executar o comando  docker-compose -f docker-compose-prod.yaml up
+ acessar através do link localhost:8080
 **Dados de acesso**
 
  - email: admin@meuponto.com.br
