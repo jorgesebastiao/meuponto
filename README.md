@@ -9,6 +9,7 @@
   - Angular V 8.0.0
   - Angular Material(UI)
 - Typescript 3.5.3
+
 **Back-end**
 - Java 11
 - Gradle 5.2.1
@@ -22,7 +23,7 @@
  - Docker
 
 **Banco de dados**
- - mysql
+ - mysql 8.0.0
 
 Como executar ambiente Windows:
 
