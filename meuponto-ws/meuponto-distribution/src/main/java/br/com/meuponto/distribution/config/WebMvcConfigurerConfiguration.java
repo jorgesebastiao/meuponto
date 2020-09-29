@@ -18,6 +18,7 @@ import java.util.Arrays;
 @EnableConfigurationProperties({ResourceProperties.class})
 public class WebMvcConfigurerConfiguration implements WebMvcConfigurer {
 
+
     static final String[] STATIC_RESOURCES = new String[]{
             "/**/*.css",
             "/**/*.ico",

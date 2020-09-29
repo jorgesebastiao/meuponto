@@ -49,7 +49,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     }
 
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/resources/**", "/v2/api-docs", "/configuration/**", "/swagger-resources/**", "/configuration/security", "/swagger-ui.html**", "/webjars/**");
+        web.ignoring().antMatchers("/resources/**", "/v2/api-docs", "/configuration/**", "/swagger-resources/**", "/configuration/security", "/swagger-ui.html", "/webjars/**");
         web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**");
         web.expressionHandler(new OAuth2WebSecurityExpressionHandler());
     }
