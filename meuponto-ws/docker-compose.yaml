@@ -18,6 +18,8 @@ services:
 
   meuponto-ws:
     image: mehiell/meuponto:latest
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
     ports:
       - 8080:8080
     networks:
