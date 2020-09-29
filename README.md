@@ -5,7 +5,10 @@
 
 **Front-end**
 - Frameworks
-Angular, Angular Material(UI)
+ 
+  Angular V 8.0.0
+  
+  Angular Material(UI)
 
 **Back-end**
 - Java 11
