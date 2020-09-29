@@ -38,11 +38,13 @@ necessario ter instalado:
 - npm
 - JDK JAVA 11
 - Docker
+- Gradle 5.2.1
 
 **Dados de acesso**
 
  - email: admin@meuponto.com.br
  - senha: meuponto
+ 
 # Referencias 
 - [Detailed example text about DDD](https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/)
 - [The DDD Sample project](https://github.com/citerus/dddsample-core)
