@@ -2,11 +2,11 @@ version: '3'
 services:
   meuponto-mysql:
     container_name: meuponto-mysql
-    image: mysql:latest
+    image: mysql
     environment:
-      MYSQL_DATABASE: meuponto
-      MYSQL_USER: meuponto
-      MYSQL_PASSWORD: meuponto@jorgesebastiao
+      MYSQL_DATABASE: 'meuponto'
+      MYSQL_USER: 'meuponto'
+      MYSQL_PASSWORD: 'meuponto@jorgesebastiao'
       MYSQL_ROOT_PASSWORD: root
       MYSQL_ROOT_HOST: '%'
     ports:
@@ -19,10 +19,16 @@ services:
     container_name: meuponto-ws
     environment:
       SPRING_PROFILES_ACTIVE: prod
+      JDBC_DATABASE_NAME: meuponto
+      JDBC_DATABASE_URL: meuponto-mysql
+      JDBC_DATABASE_USERNAME: meuponto
+      JDBC_DATABASE_PASSWORD: meuponto@jorgesebastiao
       WAIT_HOSTS: mysql:3306
     ports:
       - 8080:8080
     depends_on:
+      - meuponto-mysql
+    links:
       - meuponto-mysql
     networks:
       - app-tier
