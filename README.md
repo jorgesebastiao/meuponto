@@ -2,6 +2,7 @@
 # Projeto de exemplo DDD Meu Ponto 
 
  Tecnologias utilizadas
+
 **Front-end**
 - Frameworks
 Angular, Angular Material(UI)
@@ -12,7 +13,19 @@ Angular, Angular Material(UI)
 - Spring Boot 2.1.6.RELEASE,
 - Spring Security,
 - Spring Data + JPA + Hibernate 
+- flyway-db Para migração de dados 
 `springfox-swagger` Para gerar a UI da documentação dos serviços Rest
+
+**Ambiente**
+ - Docker
+
+**Banco de dados**
+ - mysql
+
+Como executar:
+navegar ate /meuponto/meuponto-ws
+executar comando 'docker-compose up' 
+acessar através do link localhost:8080
 
 # Referencias 
 - [Detailed example text about DDD](https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/)
