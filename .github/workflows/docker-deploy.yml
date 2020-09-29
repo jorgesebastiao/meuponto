@@ -32,7 +32,7 @@ jobs:
       working-directory: ${{env.back-end}}
 
     - name: Build with Gradle
-      run: ./gradlew bootJar
+      run: ./gradlew build
       working-directory: ${{env.back-end}}      
     - name: Docker login
       run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
