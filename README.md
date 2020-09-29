@@ -14,7 +14,7 @@ Angular, Angular Material(UI)
 - Spring Security,
 - Spring Data + JPA + Hibernate 
 - flyway-db Para migração de dados 
-`springfox-swagger` Para gerar a UI da documentação dos serviços Rest
+- `springfox-swagger` Para gerar a UI da documentação dos serviços Rest
 
 **Ambiente**
  - Docker
@@ -23,9 +23,12 @@ Angular, Angular Material(UI)
  - mysql
 
 Como executar:
-navegar ate /meuponto/meuponto-ws
-executar comando 'docker-compose up' 
-acessar através do link localhost:8080
+
+ navegar ate /meuponto/meuponto-ws
+ 
+ executar comando 'docker-compose up' 
+ 
+ acessar através do link localhost:8080
 
 # Referencias 
 - [Detailed example text about DDD](https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/)
