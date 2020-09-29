@@ -1,15 +1,24 @@
  
-# Projeto para a gestão de Pontos. 
+# Projeto de exemplo DDD Meu Ponto 
 
-# Tecnologias utilizadas
+ Tecnologias utilizadas
 **Front-end**
 - Frameworks
 Angular, Angular Material(UI)
 
 **Back-end**
-- Linguagem Java 11
-- Frameworks
-  Spring Boot,
-  Spring Security,
-  Spring Data Jpa
+- Java 11
+- Gradle 5.2.1
+- Spring Boot 2.1.6.RELEASE,
+- Spring Security,
+- Spring Data + JPA + Hibernate 
+`springfox-swagger` Para gerar a UI da documentação dos serviços Rest
 
+# Referencias 
+- [Detailed example text about DDD](https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/)
+- [The DDD Sample project](https://github.com/citerus/dddsample-core)
+- [Spring Boot](https://spring.io/guides/gs/spring-boot/)
+- [Spring Dependency Injection](http://projects.spring.io/spring-framework/)
+- [Spring Data JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+- [Spring Data JPA Query Methods](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods)
+- [Spring mediatR](https://github.com/jkratz55/spring-mediatR)
