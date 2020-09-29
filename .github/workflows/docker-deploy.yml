@@ -1,9 +1,8 @@
-name: MeuPonto CI
+name: MeuPonto Docker Deploy
 
-on: 
-  pull_request:
-    branches:
-    - master
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   build-and-push:
