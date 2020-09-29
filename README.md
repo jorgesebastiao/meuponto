@@ -23,13 +23,26 @@ Angular, Angular Material(UI)
  - mysql
 
 Como executar:
-
+Utilizando imagen docker
+necessario ter instalado Docker
  navegar ate /meuponto/meuponto-ws
  
  executar comando 'docker-compose up' 
  
  acessar através do link localhost:8080
 
+Executando localmente:
+
+necessario ter instalado:
+- nodejs 12
+- npm
+- JDK JAVA 11
+- Docker
+
+**Dados de acesso**
+
+ - email: admin@meuponto.com.br
+ - senha: meuponto
 # Referencias 
 - [Detailed example text about DDD](https://www.mirkosertic.de/blog/2013/04/domain-driven-design-example/)
 - [The DDD Sample project](https://github.com/citerus/dddsample-core)
