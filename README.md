@@ -34,7 +34,9 @@ necessário ter instalado Docker
  
  executar comando 'docker-compose up' 
  
- acessar através do link localhost:8080
+ acessar o portal meu ponto pelo link http://localhost:8080
+ 
+ documentação swagger http://localhost:8080/swagger-ui.html
 
 Executando localmente:
 
@@ -54,8 +56,11 @@ navegar pelo terminal ate  C:\Projetos\meuponto\meuponto\meuponto-portal
 executar o comando  C:\Projetos\meuponto\meuponto-ws>gradlew.bat build
 
 em seguida executar o comando  docker-compose -f docker-compose-dev.yaml up
- acessar através do link localhost:8080
  
+acessar o portal meu ponto pelo link http://localhost:8080/login
+ 
+documentação swagger http://localhost:8080/swagger-ui.html
+
 **Dados de acesso**
 
  - email: admin@meuponto.com.br
